@@ -3,13 +3,18 @@
     window.githubOrgs = ns = (ns || {});
 
 
-    $('.loadOrgs').on('click', retrieveOrgs('jisaacks'));
 
-    function retrieveOrgs(userName){
+    $('.loadOrgs').on('click', function(){
+        retrieveOrgs($('.userName').val());
+    });
+
+
+    function retrieveOrgs(userName) {
+
         $.ajax({
             url: 'https://api.github.com/users/'+ userName + '/orgs',
             method: 'GET',
-            headers: { 'Content-Type': 'application/json'},
+            headers: { 'Content-Type': 'application/json' },
             dataType: 'json'
         })
         .done(function(data){
@@ -29,19 +34,15 @@
     }
 
     function displayOrgs(data){
-
         data.forEach(function(organization){
             $('.results')
                 .append(
-                    '<li class="userOrgs">\
-                        <img src=' + organization.avatar_url + 'class="avatar" alt="orgLogo">\
+                    '<li class="userOrg">\
+                        <img src=' + organization.avatar_url + ' class="avatar" alt="orgLogo">\
                         <h1 class="orgName">' + organization.login.toLowerCase() + '</h1>\
                     </li>'
                 );
-
         });
-
-
     }
 
 
