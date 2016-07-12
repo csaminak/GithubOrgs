@@ -4,7 +4,7 @@
 
 
     $('.loadOrgs').on('click', retrieveOrgs('jisaacks'));
-    
+
     function retrieveOrgs(userName){
         $.ajax({
             url: 'https://api.github.com/users/'+ userName + '/orgs',
@@ -13,7 +13,7 @@
             dataType: 'json'
         })
         .done(function(data){
-            $('.results').text(data);
+            $('.results').text(displayOrgs(data)); //TODO function to display
         })
         .fail(function(xhr){
             errorMessage(xhr, '.results');
@@ -28,11 +28,14 @@
         }
     }
 
-    // function displayOrgs(data){
-    //
-    //     forEach
-    //
-    // }
+    function displayOrgs(data){
+        data.forEach(function(){
+            $('.results')
+                .append()
+        })
+
+
+    }
 
 
 
