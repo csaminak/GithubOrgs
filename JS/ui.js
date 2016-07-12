@@ -3,9 +3,37 @@
     window.githubOrgs = ns = (ns || {});
 
 
-    $('.loadOrgs').on('click', function displayOrgs(){
+    $('.loadOrgs').on('click', retrieveOrgs('jisaacks'));
+    
+    function retrieveOrgs(userName){
+        $.ajax({
+            url: 'https://api.github.com/users/'+ userName + '/orgs',
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json'},
+            dataType: 'json'
+        })
+        .done(function(data){
+            $('.results').text(data);
+        })
+        .fail(function(xhr){
+            errorMessage(xhr, '.results');
+        });
+    }
 
-    });
+    function errorMessage(xhr, elem) {
+        if(xhr.status === 404) {
+            $(elem).text('link not found');
+        } else {
+            $(elem).text('something isn\'t right');
+        }
+    }
+
+    // function displayOrgs(data){
+    //
+    //     forEach
+    //
+    // }
+
 
 
 })(window.githubOrgs);
