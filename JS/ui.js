@@ -39,7 +39,7 @@
                 .append(
                     '<li class="userOrg">\
                         <img src=' + organization.avatar_url + ' class="avatar" alt="orgLogo">\
-                        <h1 class="orgName">' + organization.login.toLowerCase() + '</h1>\
+                        <h2 class="orgName">' + organization.login.toLowerCase() + '</h2>\
                     </li>'
                 );
         });
