@@ -1,9 +1,41 @@
+body {
+    margin: 0 auto;
+    width: 100%;
+}
+
+h1 {
+    font-size: 3em;
+    color: $pageTitleColor;
+    font-family: $themeFont;
+
+}
+
 .results {
+    width: $orgWindowWidth;
+    padding: 0;
+    margin: 2.5%;
 
     .userOrg {
+        list-style: none;
         background-color: $orgBackgroundColor;
         border: 2px solid $orgBorderColor;
+        border-radius: 10px;
+        margin: $marginAroundOrgName;
+    }
+    .orgName {
         display: inline;
-        list-style: none;
+        font-family: $themeFont;
+        color: $orgNameColor;
+        text-shadow: 1px 2px $orgNameBackColor;
+        font-size: $orgNameSize;
+
+    }
+
+    .avatar {
+        position: relative;
+        width: $avatarSize;
+        border-radius: 5px;
+        vertical-align: middle;
+        margin: $marginAroundAvatar;
     }
 }
