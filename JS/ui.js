@@ -29,10 +29,17 @@
     }
 
     function displayOrgs(data){
-        data.forEach(function(){
+        var organization = $(data)[organization];
+
+        data.forEach(function(organization){
             $('.results')
-                .append()
-        })
+                .append(
+                    '<li class="userOrgs">\
+                        <img src=' + organization.avatar_url + 'class="avatar"></img>\
+                    </li>'
+                );
+
+        });
 
 
     }
