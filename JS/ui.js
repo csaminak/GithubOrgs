@@ -29,13 +29,13 @@
     }
 
     function displayOrgs(data){
-        var organization = $(data)[organization];
 
         data.forEach(function(organization){
             $('.results')
                 .append(
                     '<li class="userOrgs">\
-                        <img src=' + organization.avatar_url + 'class="avatar"></img>\
+                        <img src=' + organization.avatar_url + 'class="avatar" alt="orgLogo">\
+                        <h1 class="orgName">' + organization.login.toLowerCase() + '</h1>\
                     </li>'
                 );
 
