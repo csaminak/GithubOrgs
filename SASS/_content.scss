@@ -1,0 +1,9 @@
+.results {
+
+    .userOrg {
+        background-color: $orgBackgroundColor;
+        border: 2px solid $orgBorderColor;
+        display: inline;
+        list-style: none;
+    }
+}
