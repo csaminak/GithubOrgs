@@ -20,7 +20,7 @@
             dataType: 'json'
         })
         .done(function(data){
-            $('.results').text(displayOrgs(data)); //TODO function to display
+            $('.results').text(displayOrgs(data));
         })
         .fail(function(xhr){
             errorMessage(xhr, '.results');
