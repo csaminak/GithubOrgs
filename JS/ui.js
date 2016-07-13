@@ -4,8 +4,11 @@
 
 
 
-    $('.loadOrgs').on('click', function(){
-        retrieveOrgs($('.userName').val());
+    $('.loadOrgs').on('click', function(event){
+        event.preventDefault();
+        var userName = $('.userName').val();
+        retrieveOrgs(userName);
+        $('.userName').val('');
     });
 
 
