@@ -4,16 +4,41 @@ body {
 }
 
 h1 {
-    font-size: 3em;
-    color: $pageTitleColor;
+    font-size: 3*$baseFontSize;
+    color: $themeTextColor;
     font-family: $themeFont;
+    text-align: center;
+    margin: (0.5*$baseFontSize) $centeringMargin;
+}
 
+form {
+    margin: auto $centeringMargin;
+    margin-bottom: 2.5%;
+    text-align: center;
+
+
+    .userName {
+        text-align: center;
+        font-size: $baseFontSize;
+        color: $themeTextColor;
+        vertical-align: middle;
+    }
+    .loadOrgs {
+        font-style: $themeFont;
+        color: $themeTextColor;
+        height: 2*$baseFontSize;
+        border-radius: 3px;
+        background-color: $buttonBackColor;
+        &:hover {
+            box-shadow: 1px 2px 3px $buttonHoverColor;
+        }
+    }
 }
 
 .results {
     width: $orgWindowWidth;
     padding: 0;
-    margin: 2.5%;
+    margin: auto $centeringMargin;
 
     .userOrg {
         list-style: none;
@@ -28,9 +53,8 @@ h1 {
         color: $orgNameColor;
         text-shadow: 1px 2px $orgNameBackColor;
         font-size: $orgNameSize;
-
+        vertical-align: middle;
     }
-
     .avatar {
         position: relative;
         width: $avatarSize;
