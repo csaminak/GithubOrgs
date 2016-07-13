@@ -6,8 +6,7 @@
 
     $('.loadOrgs').on('click', function(event){
         event.preventDefault();
-        var userName = $('.userName').val();
-        retrieveOrgs(userName);
+        retrieveOrgs($('.userName').val());
         $('.userName').val('');
     });
 
@@ -30,7 +29,7 @@
 
     function errorMessage(xhr, elem) {
         if(xhr.status === 404) {
-            $(elem).text('link not found');
+            $(elem).text('link was not found');
         } else {
             $(elem).text('something isn\'t right');
         }
